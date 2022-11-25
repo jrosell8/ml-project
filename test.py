@@ -12,7 +12,7 @@ stopWords = set(stopwords.words('english'))
 
 df = pd.DataFrame(columns=['review', 'class'])
 
-path = "/Users/judithrosell/Desktop/MOVIE REVIEWS 2/test_blind"
+path = "/Users/judithrosell/Desktop/MOVIE REVIEWS/test_blind"
 
 for directory in os.listdir(path):
     if os.path.isdir(path + "/" + directory):
@@ -28,11 +28,10 @@ for directory in os.listdir(path):
                         if token not in stopWords:
                             token = wnl.lemmatize(token)
                             filtered_words.append(token)
-                    #lemas = "".join(filtered_words)
                     lemas_output = TreebankWordDetokenizer().detokenize(filtered_words)
                     new_row ={"review":lemas_output, "class":classe}
                     current_df = pd.DataFrame({'review': lemas_output, 'class': [classe]})
                     df = df.append(new_row, ignore_index=True)
 
 
-df.to_csv("mydataFrame_test_final.csv")
+df.to_csv("test.csv")
