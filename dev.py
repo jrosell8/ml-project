@@ -12,7 +12,7 @@ stopWords = set(stopwords.words('english'))
 
 df = pd.DataFrame(columns=['review', 'class'])
 
-path = "/Users/judithrosell/Desktop/MOVIE REVIEWS 2/dev"
+path = "/Users/judithrosell/Desktop/MOVIE REVIEWS/dev"
 
 for directory in os.listdir(path):
     if os.path.isdir(path + "/" + directory):
