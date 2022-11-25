@@ -34,4 +34,4 @@ for directory in os.listdir(path):
                     df = df.append(new_row, ignore_index=True)
 
 
-df.to_csv("mydataFrame_dev_final.csv")
+df.to_csv("dev.csv")
